@@ -1,4 +1,4 @@
-package starter;
+package com.lisihocke.serenitypractice;
 
 import cucumber.api.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
