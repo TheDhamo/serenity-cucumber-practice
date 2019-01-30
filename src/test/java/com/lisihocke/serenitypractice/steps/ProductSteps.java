@@ -1,10 +1,8 @@
 package com.lisihocke.serenitypractice.steps;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import com.lisihocke.serenitypractice.pages.ProductPage;
-import com.lisihocke.serenitypractice.pages.ShoppingCartPage;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
 import net.serenitybdd.core.Serenity;
 
 import static net.serenitybdd.core.pages.PageObject.withParameters;
