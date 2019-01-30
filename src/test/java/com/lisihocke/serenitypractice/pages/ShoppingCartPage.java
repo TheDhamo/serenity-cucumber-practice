@@ -7,7 +7,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 
 @DefaultUrl("/index.php?controller=order")
 public class ShoppingCartPage extends PageObject {
-    public void checkCartForProduct(String productId) {
+    public void checkCartContainsProduct(String productId) {
         String productReference = Serenity.getCurrentSession().get("productReference").toString();
         String productPrice = Serenity.getCurrentSession().get("productPrice").toString();
 

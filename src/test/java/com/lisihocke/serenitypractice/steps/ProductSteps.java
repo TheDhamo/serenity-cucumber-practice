@@ -9,10 +9,9 @@ import net.serenitybdd.core.Serenity;
 
 import static net.serenitybdd.core.pages.PageObject.withParameters;
 
-public class StepDefinitions {
+public class ProductSteps {
 
     private ProductPage productPage;
-    private ShoppingCartPage shoppingCartPage;
 
     @Given("^I am on the page for product (.*)$")
     public void i_am_on_the_page_for_product(String productId) {
@@ -24,11 +23,5 @@ public class StepDefinitions {
     @When("^I add the product to the cart$")
     public void i_add_the_product_to_the_cart() {
         productPage.addItemToCart();
-    }
-
-    @Then("^The cart contains the product (.*)$")
-    public void the_cart_contains_the_product(String productId) {
-        shoppingCartPage.open();
-        shoppingCartPage.checkCartForProduct(productId);
     }
 }
