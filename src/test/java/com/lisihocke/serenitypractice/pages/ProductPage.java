@@ -19,4 +19,15 @@ public class ProductPage extends PageObject {
         Serenity.setSessionVariable("productPrice").to(productPrice);
         find(By.id("add_to_cart")).click();
     }
+
+    public void checkProductPage() {
+        String productName = Serenity.getCurrentSession().get("productName").toString();
+        assert find(By.jquery("#product h1[itemprop='name']")).getText().equalsIgnoreCase(productName);
+    }
+
+    public void checkProductPreview() {
+        String productName = Serenity.getCurrentSession().get("productName").toString();
+        this.getDriver().switchTo().frame(0);
+        assert find(By.jquery("#product h1[itemprop='name']")).getText().equalsIgnoreCase(productName);
+    }
 }
