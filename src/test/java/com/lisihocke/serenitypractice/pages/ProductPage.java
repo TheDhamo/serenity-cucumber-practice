@@ -6,6 +6,8 @@ import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.NamedUrl;
 import net.thucydides.core.annotations.NamedUrls;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @NamedUrls({@NamedUrl(name = "productPage", url = "/index.php?id_product={1}&controller=product")})
 public class ProductPage extends PageObject {
 
@@ -22,12 +24,12 @@ public class ProductPage extends PageObject {
 
     public void checkProductPage() {
         String productName = Serenity.getCurrentSession().get("productName").toString();
-        assert find(By.jquery("#product h1[itemprop='name']")).getText().equalsIgnoreCase(productName);
+        assertThat(find(By.jquery("#product h1[itemprop='name']")).getText()).isEqualToIgnoringCase(productName);
     }
 
     public void checkProductPreview() {
         String productName = Serenity.getCurrentSession().get("productName").toString();
         this.getDriver().switchTo().frame(0);
-        assert find(By.jquery("#product h1[itemprop='name']")).getText().equalsIgnoreCase(productName);
+        assertThat(find(By.jquery("#product h1[itemprop='name']")).getText()).isEqualToIgnoringCase(productName);
     }
 }

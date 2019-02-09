@@ -10,6 +10,8 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @NamedUrls({@NamedUrl(name = "searchResultPage", url = "/index.php?controller=search&search_query={1}")})
 public class SearchPage extends PageObject {
 
@@ -22,7 +24,7 @@ public class SearchPage extends PageObject {
         List<WebElementFacade> productNames = findAll(".product_list .product-name");
 
         productNames.forEach((product) -> {
-            assert product.getText().toLowerCase().contains(searchTerm.toLowerCase());
+            assertThat(product.getText().toLowerCase()).contains(searchTerm.toLowerCase());
         });
     }
 

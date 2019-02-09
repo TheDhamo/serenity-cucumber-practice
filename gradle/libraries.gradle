@@ -4,7 +4,7 @@ ext{
     serenityCucumberVersion = '1.9.20'
     serenityRestAssuredVersion = '2.0.23'
     junitVersion='4.12'
-    assertJVersion='3.8.0'
+    assertJVersion='3.11.1'
     logbackVersion='1.2.3'
     jsonVersion='20180813'
 
