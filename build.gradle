@@ -27,14 +27,12 @@ targetCompatibility = 1.8
 
 dependencies {
     compile libs.logback
-    compile libs.json
 
     testCompile libs.test.serenity.core,
             libs.test.serenity.screenplay,
             libs.test.serenity.junit,
             libs.test.serenity.screenplayWebdriver,
             libs.test.serenity.cucumber,
-            libs.test.serenity.restAssured,
             libs.test.junit,
             libs.test.assertj
 }

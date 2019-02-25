@@ -5,17 +5,14 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-import java.io.IOException;
-
 public class ShoppingCartSteps {
 
     private ShoppingCartPage shoppingCartPage;
 
     @Given("^I have product (.*) in the cart$")
-    public void i_have_the_product_in_the_cart(String productId) throws IOException {
+    public void i_have_the_product_in_the_cart(String productId) {
         shoppingCartPage.open();
         shoppingCartPage.productHadBeenAddedToCart(productId);
-        shoppingCartPage.getDriver().navigate().refresh();
     }
 
     @When("^I remove product (.*) from the cart$")
