@@ -12,8 +12,9 @@ public class ProductSteps {
 
     private ProductPage productPage;
 
-    @Given("^I am on the page for product (.*)$")
-    public void i_am_on_the_page_for_product(String productId) {
+    @Given("^I am on the page for a product")
+    public void i_am_on_the_page_for_a_product() {
+        String productId = "1_1_0_0";
         productPage.open("productPage", withParameters(productId));
         productPage.storeProductReference();
         Serenity.setSessionVariable("productId").to("product_"+productId);
