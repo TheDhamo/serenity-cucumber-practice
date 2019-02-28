@@ -47,4 +47,23 @@ public class SearchPage extends PageObject {
 
         waitFor((WebElementFacade) find(By.jquery("div.fancybox-opened")));
     }
+
+    public void viewCategory(String category) {
+        String parentCategory = "#block_top_menu .sf-menu > li";
+        WebElementFacade parentCategoryLink = find(By.jquery(parentCategory + " > a:eq(1)"));
+        hoverElement(parentCategoryLink);
+
+        WebElementFacade subCategory = find(By.jquery(parentCategory + " > ul > li > a[title='" + category + "']"));
+        subCategory.click();
+    }
+
+    private void hoverElement(WebElementFacade element) {
+        Actions builder = new Actions(getDriver());
+        Actions hoverOverLocationSelector = builder.moveToElement(element);
+        hoverOverLocationSelector.perform();
+    }
+
+    public void checkCategory(String category) {
+        assertThat(find(By.className("cat-name")).getText().toLowerCase()).contains(category.toLowerCase());
+    }
 }

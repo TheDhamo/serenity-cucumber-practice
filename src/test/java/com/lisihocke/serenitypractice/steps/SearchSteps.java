@@ -38,4 +38,17 @@ public class SearchSteps {
         String searchTerm = Serenity.getCurrentSession().get("searchTerm").toString();
         searchPage.checkSearchResults(searchTerm);
     }
+
+    @When("^I view a product category$")
+    public void i_view_a_product_category() {
+        String category = "Summer Dresses";
+        searchPage.viewCategory(category);
+        Serenity.setSessionVariable("category").to(category);
+    }
+
+    @Then("^I see the products of this category$")
+    public void i_see_the_products_of_this_category() {
+        String category = Serenity.getCurrentSession().get("category").toString();
+        searchPage.checkCategory(category);
+    }
 }

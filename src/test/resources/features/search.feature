@@ -14,3 +14,8 @@ Feature: Search
     Given I have searched for a product
     When I view the product preview
     Then I see the related product preview
+
+  Scenario: View product category
+    Given I am on the homepage
+    When I view a product category
+    Then I see the products of this category
