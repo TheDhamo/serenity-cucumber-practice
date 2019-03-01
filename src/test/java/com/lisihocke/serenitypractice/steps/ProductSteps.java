@@ -13,7 +13,7 @@ public class ProductSteps {
     private ProductPage productPage;
 
     @Given("^I am on the page for a product")
-    public void i_am_on_the_page_for_a_product() {
+    public void iAmOnThePageForAProduct() {
         String productId = "1_1_0_0";
         productPage.open("productPage", withParameters(productId));
         productPage.storeProductReference();
@@ -21,17 +21,17 @@ public class ProductSteps {
     }
 
     @When("^I add the product to the cart$")
-    public void i_add_the_product_to_the_cart() {
+    public void iAddTheProductToTheCart() {
         productPage.addItemToCart();
     }
 
     @Then("^I see the related product page$")
-    public void i_see_the_related_product_page() {
+    public void iSeeTheRelatedProductPage() {
         productPage.checkProductPage();
     }
 
     @Then("^I see the related product preview$")
-    public void i_see_the_related_product_preview() {
+    public void iSeeTheRelatedProductPreview() {
         productPage.checkProductPreview();
     }
 }

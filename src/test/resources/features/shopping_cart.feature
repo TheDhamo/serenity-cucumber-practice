@@ -9,3 +9,8 @@ Feature: Shopping cart
     Given I have a product in the cart
     When I remove the product from the cart
     Then The cart does not contain the product
+
+  Scenario: Update cart item quantity
+    Given I have a product in the cart
+    When I update the quantity to 2
+    Then The product total price is updated according to the new quantity
