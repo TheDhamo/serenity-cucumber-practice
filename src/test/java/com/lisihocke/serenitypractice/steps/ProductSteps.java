@@ -34,4 +34,14 @@ public class ProductSteps {
     public void iSeeTheRelatedProductPreview() {
         productPage.checkProductPreview();
     }
+
+    @When("^I send the product to a friend$")
+    public void iSendTheProductToAFriend() {
+        productPage.sendToAFriend();
+    }
+
+    @Then("^I see a success message$")
+    public void iSeeASuccessMessage() {
+        productPage.checkForSuccessMessage();
+    }
 }

@@ -32,4 +32,15 @@ public class ProductPage extends PageObject {
         this.getDriver().switchTo().frame(0);
         assertThat(find(By.jquery("#product h1[itemprop='name']")).getText()).isEqualToIgnoringCase(productName);
     }
+
+    public void sendToAFriend() {
+        find(By.id("send_friend_button")).click();
+        find(By.id("friend_name")).type("test");
+        find(By.id("friend_email")).type("test@test.com");
+        find(By.id("sendEmail")).click();
+    }
+
+    public void checkForSuccessMessage() {
+        assertThat(find(By.jquery(".fancybox-inner > p")).getText()).isEqualToIgnoringCase("Your e-mail has been sent successfully");
+    }
 }
